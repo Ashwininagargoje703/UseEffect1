@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react"
-const axios = require('axios').default;
-
+import axios from "axios";
 export const Groceries = ()=>{
     const [text, setText] =useState("");
      const [groceries,setGroceries] =useState([]);
@@ -27,10 +26,8 @@ export const Groceries = ()=>{
                 headers: {
                     "content-type" : "application/json"
                 }
-                }) ;
-            }}
-            
-            >Save Grocery</button>
+                }) 
+            }} >Save Grocery</button>
            {groceries.map((g)=>(<div key={g.id}>{g.title}</div>))}
 <button onClick={()=>{
     setpage(page-1)
